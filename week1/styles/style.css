@@ -1,6 +1,6 @@
-/* Global reset to ensure consistency across browsers */
+/* The * selects everything and acts as a global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif; /* Sets a default font for the whole page */
+    font-family: 'Courier New', Courier, monospace, sans-serif; /* Sets a default font for the whole page */
     margin: 0; /* Removes default margins */
     padding: 0; /* Removes default padding */
     box-sizing: border-box; /* Makes sure borders and paddings are included in the element's total width and height */
@@ -8,7 +8,7 @@
 
 /* Sets the background color of the whole page and ensures content fits the screen height */
 html {
-    background-color: aqua; /* Sets a light blue background color */
+    background-color: rgb(216, 112, 147); /* Sets a light blue background color */
 }
 
 /* Applies to both <html> and <body> */
@@ -47,6 +47,34 @@ main {
 
 .portfolio {
     grid-area: portfolio; /* Assigns the portfolio section to its grid area */
+    background-color: rgb(191, 209, 111);
+    padding: 20px;
+}
+
+ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+ul ul {
+    list-style-type: circle;
+}
+
+ol {
+    margin-left: 35px;
+}
+
+.portfolio img {
+    display: block; /* Ensures the image behaves like a block element */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+.image-container {
+    display: flex; /* Use flexbox for layout */
+}
+
+.image-container img {
+    width: 50%; /* Each image takes up 50% of the container width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #map { 
@@ -56,4 +84,22 @@ main {
 
 footer { 
     grid-area: footer; /* Assigns the footer to its grid area */
+}
+
+/* typography */
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Archivo Black';
+}
+
+h2 {
+    font-size: 1.25rem;
+    text-align: right;
+    font-family: 'Archivo Black';
+  }
+  
+p {
+    font-size: 1rem;
+    font-family: 'Courier New', sans-serif;
 }

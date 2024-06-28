@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello World with MapLibreGl</title>
-        <!-- hint: remember to change your page title! -->
+        <title>Lab #1: Map and Portfolio</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" href="styles/style.css">
@@ -12,23 +11,60 @@
 
         <!-- MapLibreGL's JavaScript-->
         <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <header>
-            Hello World
-            <!-- hint: you can make a menu with other links here if you'd like -->
+            <h1 style="color: #bfd16f;">LAB #1: MAP & PORTFOLIO</h1>
+            <h2 style="color: #bfd16f;">my favorite places to study on campus:</h2>
         </header>
 
         <main>
             <div class="portfolio">
-                <!-- Portfolio content goes here -->
-                <img src="me.png">
+                <div class="image-container">
+                    <img src="IMG_5045.png" alt="me" height="200" width="150">
+                    <img src="IMG_7079.png" alt="also me" height="200" width="150">
+                </div>
+                <br>
+                <p>Hi! I'm Justine, a rising 3rd-year majoring in Computational and Systems Biology 
+                with a minor in Digital Humanities.</p>
+                <br>
+                <p>As I learn to become a critical digital map maker, my goal is to create maps that 
+                are not only accurate and insightful but also accessible to as many people as possible,
+                promoting inclusivity and reducing digital disparities.</p>
+                <img src="https://d2bzx2vuetkzse.cloudfront.net/fit-in/0x450/images_without_background/a54bd583-b4f2-4e16-95f5-67b502b966f4.png" alt="flower" width="75" height="50">
+                things i love to do in my free time (in order):
+
+                <ol>
+                    <li>listen to <a href="https://open.spotify.com/playlist/4JD4JooiYTLx7i5D42pH9a?si=4c2d60a493354a95">music</a></li>
+                    <li>needle art!</li>
+                    <li>bother my sister</li>
+                    <li>read <a href="https://www.goodreads.com/book/show/22822858-a-little-life">sad books</a></li>
+                    <li>doom scroll</li>
+                    <li>edit photos & videos</li>
+                </ol>
+                <br>
+                fun facts about me:
+                    <ul>
+                        <li>i love chinese foooooood!!!!</li>
+                        <li>
+                        can be forgetful
+                          <ul>
+                            <li>i have seen grey's anatomy 12 times</li>
+                            <li>its like a new show every time</li>
+                          </ul>
+                        </li>
+                        <li>first-gen filpino immigrant!</li>
+                      </ul>
             </div>
             <div id="map"></div>
         </main>
         <div id="footer">
-            Copyright(2024)
+            copyright(2024)
         </div>
         <script src="js/init.js"></script>
     </body>
