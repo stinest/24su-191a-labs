@@ -1,10 +1,12 @@
 // Initialize the map
 const map = new maplibregl.Map({
     container: 'map', // container ID
-    style: 'https://api.maptiler.com/maps/streets/style.json?key=wsyYBQjqRwKnNsZrtci1', // Your style URL
+    style: 'https://api.maptiler.com/maps/backdrop/style.json?key=dZ59VPBA7A1UHvaquwWJ', // Your style URL
     center: [ -118.442, 34.0709], // Starting position [lng, lat]
     zoom: 15 // Starting zoom level
 });
+
+// my key: dZ59VPBA7A1UHvaquwWJ
 
 const markerColors = ['#d87093', '#52A4D3', '#bfd16f'];
 

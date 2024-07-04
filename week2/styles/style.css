@@ -1,0 +1,126 @@
+* {
+    font-family: 'Courier New', Courier, monospace, sans-serif; /* Sets a default font for the whole page */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Makes sure borders and paddings are included in the element's total width and height */
+}
+
+html {
+    background-color: rgb(216, 112, 147); /* Sets a light blue background color */
+}
+
+/* Applies to both <html> and <body> */
+html, body {
+    height: 80vh; /* Sets the height to 80% of the viewport height, making sure the content fits on the screen */
+    padding: 1rem; /* Adds a bit of space around the content for better readability */
+    box-sizing: border-box; /* Ensures padding does not add to the set height */
+}
+
+/* Defines the main layout of the page using CSS Grid */
+body {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-areas: 
+        "header" /* Top area for the header */
+        "main"   /* Middle area for the main content */
+        "footer"; /* Bottom area for the footer */
+    grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
+}
+
+/* Sets up the layout for the main content area, dividing it into two columns */
+main {
+    display: grid; /* Enables CSS Grid within the main element */
+    grid-template-areas:
+        "portfolio map"; /* Divides the main area into portfolio and map sections side by side */
+    grid-template-columns: 1fr 1fr; /* Allocates equal width to both sections */
+}
+
+header { 
+    grid-area: header;
+    padding: 0.5rem;
+    color: rgb(182, 230, 219);
+}
+
+main { 
+    grid-area: main;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    background-color: rgb(182, 230, 219);
+    display: flex; /* This will make the items inside the portfolio flex items */
+    flex-direction: column; /* This can be row if you want the items to be side by side */
+    justify-content: center; /* This can be flex-start, flex-end, space-between, space-around, space-evenly */
+    align-items: center; /* This can be flex-start, flex-end, stretch, baseline */
+}
+
+ul {
+    list-style-type: none; /* Remove default bullets */
+}
+
+ul li::before {
+    content: "★"; 
+    padding-right: 8px;
+}
+
+#map { 
+    grid-area: map;
+    height: 80vh;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.button {
+    background: url('star2.png') no-repeat center center;
+    background-size: 95px 95px;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 100px;
+    padding: 10px 28px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+
+}
+
+.button:hover {
+    background-color: rgb(146, 209, 195);
+}
+
+/* typography */
+
+h1 {
+    font-size: 1.3rem;
+    font-family: 'Courier New', sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    font-family: 'Archivo Black';
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-family: 'Brush Script MT', cursive;
+}
+
+h4 {
+    font-size: 1rem;
+    font-family: 'Archivo Black';
+}
+
+p {
+    font-size: 1rem;
+    font-family: 'Courier New', sans-serif;
+}
