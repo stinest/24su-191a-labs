@@ -1,7 +1,7 @@
 // Initialize the map
 const map = new maplibregl.Map({
     container: 'map', // container ID
-    style: 'https://api.maptiler.com/maps/backdrop/style.json?key=dZ59VPBA7A1UHvaquwWJ', // Your style URL
+    style: 'https://api.maptiler.com/maps/aquarelle/style.json?key=dZ59VPBA7A1UHvaquwWJ', // Your style URL
     center: [ -118.442, 34.0709], // Starting position [lng, lat]
     zoom: 15 // Starting zoom level
 });
