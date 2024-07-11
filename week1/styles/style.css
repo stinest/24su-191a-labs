@@ -28,26 +28,25 @@ body {
     grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
 }
 
-/* Sets up the layout for the main content area, dividing it into two columns */
 main {
-    display: grid; /* Enables CSS Grid within the main element */
+    display: grid;
     grid-template-areas:
-        "portfolio map"; /* Divides the main area into portfolio and map sections side by side */
-    grid-template-columns: 1fr 1fr; /* Allocates equal width to both sections */
+        "portfolio map";
+    grid-template-columns: 1fr 1fr; 
 }
 
-/* Grid area assignments for each major section, linking them to their respective areas in the grid */
 header { 
-    grid-area: header; /* Assigns the header to its grid area */
+    grid-area: header;
+    padding: 0.5rem;
 }
 
 main { 
-    grid-area: main; /* Assigns the main content to its grid area */
+    grid-area: main;
 }
 
 .portfolio {
-    grid-area: portfolio; /* Assigns the portfolio section to its grid area */
-    background-color: rgb(191, 209, 111);
+    grid-area: portfolio; 
+    background-color: #bfd16f;
     padding: 20px;
 }
 
@@ -64,26 +63,26 @@ ol {
 }
 
 .portfolio img {
-    display: block; /* Ensures the image behaves like a block element */
-    margin: 0 auto; /* Centers the image horizontally */
+    display: block;
+    margin: 0 auto;
 }
 
 .image-container {
-    display: flex; /* Use flexbox for layout */
+    display: flex;
 }
 
 .image-container img {
-    width: 50%; /* Each image takes up 50% of the container width */
-    height: auto; /* Maintain aspect ratio */
+    width: 50%;
+    height: auto;
 }
 
 #map { 
-    grid-area: map; /* Assigns the map section to its grid area */
-    height: 80vh; /* Sets the map's height to 80% of the viewport height */
+    grid-area: map;
+    height: 100%;   /* matches portfolio height */
 }
 
 footer { 
-    grid-area: footer; /* Assigns the footer to its grid area */
+    grid-area: footer;
 }
 
 /* typography */
@@ -97,9 +96,41 @@ h2 {
     font-size: 1.25rem;
     text-align: right;
     font-family: 'Archivo Black';
-  }
+}
+
+h3 {
+    font-size: 1rem;
+    font-family: 'Archivo Black';
+    color: #333;
+}
   
 p {
     font-size: 1rem;
     font-family: 'Courier New', sans-serif;
+    color: #333;
+}
+
+/* navigation */
+
+.nav {
+    padding: 14px 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px; 
+    border: 1px solid #333;
+    background-color: #bfd16f;
+    color: #333;
+}
+
+.nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
 }

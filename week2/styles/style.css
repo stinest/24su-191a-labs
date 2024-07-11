@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: rgb(216, 112, 147); /* Sets a light blue background color */
+    background-color: #d87093; /* Sets a light blue background color */
 }
 
 /* Applies to both <html> and <body> */
@@ -31,13 +31,12 @@ main {
     display: grid; /* Enables CSS Grid within the main element */
     grid-template-areas:
         "portfolio map"; /* Divides the main area into portfolio and map sections side by side */
-    grid-template-columns: 1fr 1fr; /* Allocates equal width to both sections */
+    grid-template-columns: 400px 1fr;
 }
 
 header { 
     grid-area: header;
     padding: 0.5rem;
-    color: rgb(182, 230, 219);
 }
 
 main { 
@@ -47,14 +46,15 @@ main {
 .portfolio {
     grid-area: portfolio;
     background-color: rgb(182, 230, 219);
-    display: flex; /* This will make the items inside the portfolio flex items */
-    flex-direction: column; /* This can be row if you want the items to be side by side */
-    justify-content: center; /* This can be flex-start, flex-end, space-between, space-around, space-evenly */
-    align-items: center; /* This can be flex-start, flex-end, stretch, baseline */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
 }
 
 ul {
-    list-style-type: none; /* Remove default bullets */
+    list-style-type: none;
 }
 
 ul li::before {
@@ -64,7 +64,7 @@ ul li::before {
 
 #map { 
     grid-area: map;
-    height: 80vh;
+    height: 100%;
 }
 
 #footer {
@@ -79,23 +79,23 @@ ul li::before {
 }
 
 .button {
-    background: url('star2.png') no-repeat center center;
+    background: url('star3.png') no-repeat center center;
     background-size: 95px 95px;
     border: none;
     color: white;
     width: 100px;
     height: 100px;
-    padding: 10px 28px;
     text-align: center;
     font-size: 12px;
     cursor: pointer;
     border-radius: 12px;
-    transition: background-color 0.3s, transform 0.3s;
-
 }
 
 .button:hover {
-    background-color: rgb(146, 209, 195);
+    background: url('star4.png') no-repeat center center;
+    background-size: 95px 95px;
+    transform: scale(0.9);
+    transform: rotate(9deg);
 }
 
 /* typography */
@@ -103,24 +103,54 @@ ul li::before {
 h1 {
     font-size: 1.3rem;
     font-family: 'Courier New', sans-serif;
+    color: #333;
 }
 
 h2 {
     font-size: 2rem;
     font-family: 'Archivo Black';
+    color: #333;
 }
 
 h3 {
     font-size: 2.5rem;
     font-family: 'Brush Script MT', cursive;
+    color: #333;
 }
 
 h4 {
     font-size: 1rem;
     font-family: 'Archivo Black';
+    color: #333;
 }
 
 p {
     font-size: 1rem;
     font-family: 'Courier New', sans-serif;
+    color: #333;
+}
+
+/* navigation */
+
+.nav {
+    padding: 14px 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 10px; 
+    border: 1px solid #333;
+    background-color: #b6e6db;
+    color: #333;
+}
+
+.nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
 }
