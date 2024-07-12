@@ -20,7 +20,7 @@ html, body {
 body {
     display: grid; /* Enables CSS Grid layout */
     grid-template-areas: 
-        "header" /* Top area for the header */
+        "header" /* Top area for the header */ 
         "main"   /* Middle area for the main content */
         "footer"; /* Bottom area for the footer */
     grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
@@ -46,16 +46,18 @@ header {
     width: 200px;
     height: 80px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Archivo Black';
     cursor: pointer;
     border-radius: 12px;
+    text-transform: uppercase;
 }
 
 .button:hover {
-    background: url('man.png') no-repeat center center;
-    background-size: 80px 80px;
-    transform: scale(0.8);
+    background: url('bus.png') no-repeat center center;
+    background-size: 200px 180px;
+    transform: scale(0.9);
+    color: transparent;
 }
 
 /* lab styling */
@@ -117,7 +119,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(#fbc02d, #e91e63, #03a9f4, #8bc34a);
+    background-image: linear-gradient(#1477a4, #fbc02d, #bb3461);
     opacity: 0;
     z-index: 0;
     transition: opacity 0.3s ease-out;
