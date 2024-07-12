@@ -25,6 +25,16 @@ function createImage(img) {
     marker.style.backgroundSize = 'cover';
     marker.style.width = '50px';
     marker.style.height = '50px';
+
+    marker.addEventListener('mouseenter', function() {
+        marker.style.width = '70px';
+        marker.style.height = '70px';
+    });
+    marker.addEventListener('mouseleave', function() {
+        marker.style.width = '50px';
+        marker.style.height = '50px';
+    });
+
     return marker;
 }
 
