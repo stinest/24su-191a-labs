@@ -1,4 +1,4 @@
-let mapOptions = {'centerLngLat': [-118.4430,34.0691], 'zoomLvl': 15}
+let mapOptions = {'centerLngLat': [-118.4,34.05], 'zoomLvl': 10}
 
 const map = new maplibregl.Map({
     container: 'map',
@@ -7,9 +7,9 @@ const map = new maplibregl.Map({
     zoom: mapOptions.zoomLvl
 });
 
-function addMarker(lat,lng,title,message){
-    let popup_message = `<h2>${title}</h2> <h3>${message}</h3>`
-    new maplibregl.Marker()
+function addMarker(lat,lng,title,message,img){
+    let popup_message = `<h4>${title}</h4> <br>${message}`
+    new maplibregl.Marker({ element: createImage(img)})
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -18,18 +18,45 @@ function addMarker(lat,lng,title,message){
     return message
 }
 
+function createImage(img) {
+    const imgURL = `js/${img}.png`;
+    const marker = document.createElement('div');
+    marker.style.backgroundImage = `url(${imgURL})`;         // custom markers for map
+    marker.style.backgroundSize = 'cover';
+    marker.style.width = '50px';
+    marker.style.height = '50px';
+    return marker;
+}
+
+let lineCount = 0;
 function createButtons(lat,lng,title){
     const newButton = document.createElement("button"); 
     newButton.id = "button"+title; 
     newButton.innerHTML = title; 
     newButton.setAttribute("lat",lat); 
     newButton.setAttribute("lng",lng); 
+    newButton.className = "button";
     newButton.addEventListener('click', function(){
         map.flyTo({
             center: [lng,lat],
         })
     })
-    document.getElementById("contents").appendChild(newButton);
+    
+    if (lineCount % 6 == 0) {
+        document.getElementById("contents").appendChild(newButton);
+    } else if (lineCount % 6 == 1) {
+        document.getElementById("contents2").appendChild(newButton);
+    } else if (lineCount % 6 == 2) {
+        document.getElementById("contents3").appendChild(newButton);
+    } else if (lineCount % 6 == 3) {
+        document.getElementById("contents4").appendChild(newButton);
+    } else if (lineCount % 6 == 4) {
+        document.getElementById("contents5").appendChild(newButton);
+    } else if (lineCount % 6 == 5) {
+        document.getElementById("contents6").appendChild(newButton);
+    }
+
+    lineCount++;
 }
 
 map.on('load', function() {
@@ -48,8 +75,9 @@ function processData(results){
         let coordinates = feature.geometry.coordinates;
         let longitude = coordinates[0];
         let latitude = coordinates[1];
-        let title = feature.properties.title;
+        let title = feature.properties.place;
         let message = feature.properties.message;
-        addMarker(latitude,longitude,title,message);
+        let img = feature.properties.icon;      // for custom icon
+        addMarker(latitude,longitude,title,message,img);
     });
 };
