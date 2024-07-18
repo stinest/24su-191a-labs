@@ -29,13 +29,39 @@ body {
 main {
     display: grid; /* Enables CSS Grid within the main element */
     grid-template-areas:
-        "map portfolio"; /* Divides the main area into portfolio and map sections side by side */
-    grid-template-columns: 1fr 400px;
+        "portfolio map"; /* Divides the main area into portfolio and map sections side by side */
+    grid-template-columns: 400px 1fr;
 }
 
 header { 
     grid-area: header; /* Assigns the header to its grid area */
     padding: 0.5rem;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+/* lab styling */
+
+.portfolio {
+    grid-area: portfolio;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map { 
+    grid-area: map;
+    height: 80vh;
+}
+
+#contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .button {
@@ -60,74 +86,6 @@ header {
     color: transparent;
 }
 
-#footer {
-    grid-area: footer;
-}
-
-/* lab styling */
-
-.portfolio {
-    grid-area: portfolio;
-    background-color: #ecb949;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-#map { 
-    grid-area: map;
-    height: 100%;
-}
-
-#contents, #contents3, #contents5 {
-    background-image: url('road.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    z-index: 1;
-}
-
-#contents2,  #contents4, #contents6 {
-    background-image: url('road.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 1;
-}
-
-.portfolio img {
-    max-width: 80%;
-    z-index: 1;
-}
-
-.portfolio::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(#1477a4, #fbc02d, #bb3461);
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 0.3s ease-out;
-}
-
-.portfolio:hover::before {
-    opacity: 1;
-}
 /* typography */
 
 h1 {
@@ -175,7 +133,7 @@ p {
     padding: 5px 10px;
     margin-left: 10px; 
     border: 1px solid #333;
-    background-color: #ecb949;
+    background-color: #6b4885;
     color: #333;
 }
 

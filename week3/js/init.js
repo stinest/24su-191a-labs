@@ -9,7 +9,7 @@ const map = new maplibregl.Map({
 
 function addMarker(lat,lng,title,message,img){
     let popup_message = `<h4>${title}</h4> <br>${message}`
-    new maplibregl.Marker({ element: createImage(img)})
+    new maplibregl.Marker({ element: createImage(img) })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
