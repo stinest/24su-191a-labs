@@ -47,7 +47,7 @@ function createButtons(lat,lng,title){
             center: [lng,lat],
         })
     })
-    document.getElementById("contents").appendChild(newButton);
+    document.getElementById("buttonmap").appendChild(newButton);
 }
 
 function createImage(img) {

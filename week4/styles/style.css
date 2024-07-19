@@ -22,6 +22,7 @@ body {
     grid-template-areas: 
         "header" /* Top area for the header */ 
         "main"   /* Middle area for the main content */
+        "buttonmap"
         "footer"; /* Bottom area for the footer */
     grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
 }
@@ -44,6 +45,15 @@ header {
 
 /* lab styling */
 
+#buttonmap {
+    grid-area: buttonmap;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .portfolio {
     grid-area: portfolio;
     display: flex;
@@ -64,26 +74,16 @@ header {
     gap: 10px;
 }
 
-.button {
-    background: url('sign.png') no-repeat center center;
-    background-size: 200px 80px;
-    border: none;
-    color: white;
-    width: 200px;
-    height: 80px;
-    text-align: center;
-    font-size: 14px;
-    font-family: 'Archivo Black';
-    cursor: pointer;
-    border-radius: 12px;
-    text-transform: uppercase;
+#buttonmap button {
+    color: #d87093;
+    border: dashed #6b4885;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 13px;
 }
 
-.button:hover {
-    background: url('bus.png') no-repeat center center;
-    background-size: 200px 180px;
+#buttonmap button:hover {
     transform: scale(0.9);
-    color: transparent;
 }
 
 /* typography */
